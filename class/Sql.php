@@ -11,13 +11,13 @@
 
             foreach($parameters as $key => $value){
 
-                $statement->setParam($key, $value);
+                $this->setParam($statment, $key, $value);
             }
         }
 
-        private function setParam($statement, $key, $value){
+        private function setParam($statment, $key, $value){
 
-            $statement->bindParam($key, $value);
+            $statment->bindParam($key, $value);
         }
 
         public function query($rawQuery, $params = array()){
