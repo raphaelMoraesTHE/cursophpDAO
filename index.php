@@ -27,10 +27,18 @@
 
     //echo $usuario;
 
-    $aluno = new Usuario("aluno", "@lun@");
-    
-    $aluno->insert();
 
-    echo $aluno;
+    //Criando um novo usuario
+   // $aluno = new Usuario("aluno", "@lun@");
+    
+    //$aluno->insert();
+
+    //echo $aluno;
+
+    $usuario = new Usuario();
+    $usuario->loadById(4);
+    $usuario->update("professor", "123456");
+
+    echo $usuario;
 
 ?>
