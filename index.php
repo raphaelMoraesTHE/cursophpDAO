@@ -4,16 +4,18 @@
 
     //----------------------------------------------------------------------
     //Exibe todos os registros da tabela tb_usuarios
-    $sql = new Sql();
-    $usuarios = $sql->select("SELECT * FROM tb_usuarios");
+    //$sql = new Sql();
+    //$usuarios = $sql->select("SELECT * FROM tb_usuarios");
 
-    echo json_encode($usuarios);
+    //echo json_encode($usuarios);
 
     //----------------------------------------------------------------------
     //Carrega um usuario
-    //$root = new Usuario();
+    $root = new Usuario();
+    $root->loadById(4);
+    echo $root;
 
-    //$root->loadById(4);
+    //----------------------------------------------------------------------
 
     
     //$lista = Usuario::getList();
