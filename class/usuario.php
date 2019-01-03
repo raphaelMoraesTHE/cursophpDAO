@@ -87,7 +87,7 @@
         public static function search($login){
 
             $sql = new Sql();
-            return $sql->select("SELECT * FROM tb_usuarios WHERE deslogin LIKE ? ORDER BY deslogin;", array(
+            return $sql->select("SELECT * FROM tb_usuarios WHERE deslogin LIKE :SEARCH ORDER BY deslogin;", array(
                 ':SEARCH'=>"%".$login."%"
             ));
 
@@ -104,7 +104,13 @@
 
             if(count($results) > 0){
                 
-                $this->setData($results[0]);              
+                $row = $results[0];
+
+                //$this->setData($results[0]); 
+                $this->setIdusuario($row['idusuario']);
+                $this->setDeslogin($row['deslogin']);
+                $this->setDessenha($row['dessenha']);
+                $this->setDtcadastro(new DateTime($row['dtcadastro']));                 
             }
             else{
                 throw new Exception("Login e/ou senha invalido!");

@@ -11,31 +11,33 @@
 
     //----------------------------------------------------------------------
     //Carrega um usuario
-    $root = new Usuario();
-    $root->loadById(4);
-    echo $root;
+    //$root = new Usuario();
+    //$root->loadById(4);
+    
+    //echo $root;
 
     //----------------------------------------------------------------------
-
-    
+    //Carrega uma lista de usuarios
     //$lista = Usuario::getList();
-
+    
     //echo json_encode($lista);
 
+    //----------------------------------------------------------------------
     //Carrega uma lista de usuarios buscando pelo login
-    //$search = Usuario::search("R");
-
+    //$search = Usuario::search("raph");
+    
     //echo json_encode($search);
 
-    //Carrega usuario login e senha
-    //$usuario = new Usuario();
-    //$usuario->login("raphael", "1234");
+    //----------------------------------------------------------------------
+    //Carrega um usuario buscando pelo login e senha
+    $usuario = new Usuario();
+    $usuario->login("raphael", "1234");
 
-    //echo $usuario;
+    echo $usuario;
 
-
+    //----------------------------------------------------------------------
     //Criando um novo usuario
-   // $aluno = new Usuario("aluno", "@lun@");
+    // $aluno = new Usuario("aluno", "@lun@");
     
     //$aluno->insert();
 
