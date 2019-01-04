@@ -30,30 +30,28 @@
 
     //----------------------------------------------------------------------
     //Carrega um usuario buscando pelo login e senha
-    $usuario = new Usuario();
-    $usuario->login("raphael", "1234");
+    //$usuario = new Usuario();
+    //$usuario->login("raphael", "1234");
 
-    echo $usuario;
+    //echo $usuario;
 
     //----------------------------------------------------------------------
     //Criando um novo usuario
-    // $aluno = new Usuario("aluno", "@lun@");
-    
+    //$aluno = new Usuario("aluno", "@lun@");
     //$aluno->insert();
 
     //echo $aluno;
 
-
+    //----------------------------------------------------------------------
     //Alterar um usuario
-    //$usuario = new Usuario();
-    //$usuario->loadById(4);
-    //$usuario->update("professor", "123456");
+    $usuario = new Usuario();
+    $usuario->loadById(7);
+    $usuario->update("professor", "123456");
 
+    echo $usuario;
 
-
-    //echo $usuario;
-
-
+    //----------------------------------------------------------------------
+    //Deletar um usuario
     //$usuario = new Usuario();
     //$usuario->loadById(5);
     //$usuario->delete();

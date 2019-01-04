@@ -41,10 +41,10 @@
 
         public function setData($data){
             
-            $this->setIdusuario($row['idusuario']);
-            $this->setDeslogin($row['deslogin']);
-            $this->setDessenha($row['dessenha']);
-            $this->setDtcadastro(new DateTime($row['dtcadastro']));  
+            $this->setIdusuario($data['idusuario']);
+            $this->setDeslogin($data['deslogin']);
+            $this->setDessenha($data['dessenha']);
+            $this->setDtcadastro(new DateTime($data['dtcadastro']));  
 
         }
 
@@ -58,6 +58,12 @@
             ));
         }
 
+        public function __construct($login = "", $password = ""){
+
+            $this->setDeslogin($login);
+            $this->setDessenha($password);
+        }
+
         public function loadById($id){
 
             $sql = new Sql();
@@ -67,14 +73,9 @@
             ));
 
             if(count($results) > 0){
+               
+                $this->setData($results[0]);
 
-                $row = $results[0];
-
-                //$this->setData($results[0]); 
-                $this->setIdusuario($row['idusuario']);
-                $this->setDeslogin($row['deslogin']);
-                $this->setDessenha($row['dessenha']);
-                $this->setDtcadastro(new DateTime($row['dtcadastro']));               
             }
         }
 
@@ -104,13 +105,8 @@
 
             if(count($results) > 0){
                 
-                $row = $results[0];
-
-                //$this->setData($results[0]); 
-                $this->setIdusuario($row['idusuario']);
-                $this->setDeslogin($row['deslogin']);
-                $this->setDessenha($row['dessenha']);
-                $this->setDtcadastro(new DateTime($row['dtcadastro']));                 
+                $this->setData($results[0]); 
+                              
             }
             else{
                 throw new Exception("Login e/ou senha invalido!");
@@ -127,7 +123,9 @@
             ));
 
             if (count($results) > 0){
+
                 $this->setData($results[0]);
+
             }
         }
 
@@ -157,12 +155,6 @@
             $this->setDeslogin("");
             $this->setDessenha("");
             $this->setDtcadastro(new DateTime());
-        }
-
-        public function __construct($login = "", $password = ""){
-
-            $this->setDeslogin($login);
-            $this->setDessenha($password);
         }
         
     }
