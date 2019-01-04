@@ -44,18 +44,18 @@
 
     //----------------------------------------------------------------------
     //Alterar um usuario
-    $usuario = new Usuario();
-    $usuario->loadById(7);
-    $usuario->update("professor", "123456");
+    //$usuario = new Usuario();
+    //$usuario->loadById(7);
+    //$usuario->update("professor", "123456");
 
-    echo $usuario;
+    //echo $usuario;
 
     //----------------------------------------------------------------------
     //Deletar um usuario
-    //$usuario = new Usuario();
-    //$usuario->loadById(5);
-    //$usuario->delete();
+    $usuario = new Usuario();
+    $usuario->loadById(6);
+    $usuario->delete();
 
-    //echo $usuario;
+    echo $usuario;
 
 ?>
