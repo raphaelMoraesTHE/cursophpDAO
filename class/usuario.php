@@ -147,7 +147,7 @@
         public function delete(){
 
             $sql = new Sql();
-            $sql->query("DELETE FROM t_usuarios WHERE idusuario = :ID", array(
+            $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
                 ':ID'=>$this->getIdusuario()
             ));
 
